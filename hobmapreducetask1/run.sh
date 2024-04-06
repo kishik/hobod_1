@@ -3,7 +3,7 @@
 OUT_DIR="FoundResult"
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
-    -D mapreduce.job.reduces=10 \
+    -D mapreduce.job.reduces=4 \
     -D mapreduce.job.name="Own words" \
     -files mapper1.py,reducer1.py \
     -mapper "python3 mapper1.py" \
