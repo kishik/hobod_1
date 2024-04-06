@@ -14,4 +14,4 @@ for line in sys.stdin:
         # count was not a number, so silently
         # ignore/discard this line
         continue
-    print(f'{word}\t{count}')
+    print(f'{word} {count}')

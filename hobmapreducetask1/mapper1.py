@@ -14,7 +14,7 @@ for line in sys.stdin:
         if len(word) >= 6 and len(word) <= 9:
             # Подсчёт вхождений
             if word[0].isupper() and word[1:].islower():
-                print(f'{word.lower()}\t1')
+                print(f'{word.lower()} 1')
             else:
-                print(f'{word.lower()}\t0')
+                print(f'{word.lower()} 0')
                 

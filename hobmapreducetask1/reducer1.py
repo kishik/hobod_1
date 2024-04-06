@@ -11,7 +11,7 @@ for line in sys.stdin:
     line = line.strip()
 
     # parse the input we got from mapper.py
-    word, count = line.split('\t', 1)
+    word, count = line.split(' ', 1)
 
     # convert count (currently a string) to int
     try:
@@ -29,11 +29,11 @@ for line in sys.stdin:
     else:
         if current_word and flag == 1:
             # write result to STDOUT
-            print(f'{current_word}\t{current_count}') # % (current_word, current_count)
+            print(f'{current_word} {current_count}') # % (current_word, current_count)
         current_count = 1
         flag = count
         current_word = word
 
 # do not forget to output the last word if needed!
 if current_word == word and flag == 1:
-    print(f'{current_word}\t{current_count}')
+    print(f'{current_word} {current_count}')
