@@ -20,7 +20,7 @@ yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -D mapreduce.job.name="Sort" \
     -D stream.num.map.output.key.fields=2 \
     -D mapreduce.job.output.key.comparator.class=org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator \
-    -D mapreduce.partition.keycomparator.options='-k1 -k2,2nr' \
+    -D mapreduce.partition.keycomparator.options='-k1,1nr -k2' \
     -files mapper2.py,reducer2.py \
     -mapper "python3 mapper2.py" \
     -reducer "python3 reducer2.py" \
