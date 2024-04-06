@@ -6,7 +6,7 @@ for line in sys.stdin:
     # remove leading and trailing whitespace
     line = line.strip()
     # parse the input we got from mapper.py
-    word, count = line.split('\t', 1)
+    word, count = line.split(' ', 1)
     # convert count (currently a string) to int
     try:
         count = int(count)
