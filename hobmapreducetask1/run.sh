@@ -4,7 +4,7 @@ OUT_DIR="FoundResult"
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -D mapreduce.job.reduces=4 \
-    -D mapreduce.job.name="Own words" \
+    -D mapreduce.job.name="Start" \
     -files mapper1.py,reducer1.py \
     -mapper "python3 mapper1.py" \
     -reducer "python3 reducer1.py" \
@@ -17,10 +17,10 @@ OUT_DIR2="SortedResult"
 
 yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
     -D mapreduce.job.reduces=1 \
-    -D mapreduce.job.name="Sorting" \
+    -D mapreduce.job.name="Sort" \
     -D stream.num.map.output.key.fields=2 \
     -D mapreduce.job.output.key.comparator.class=org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator \
-    -D mapreduce.partition.keycomparator.options='-k1,1nr -k2' \
+    -D mapreduce.partition.keycomparator.options='-k1 -k2,2nr' \
     -files mapper2.py,reducer2.py \
     -mapper "python3 mapper2.py" \
     -reducer "python3 reducer2.py" \
