@@ -30,8 +30,8 @@ yarn jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
 hdfs dfs -rm -r -skipTrash ${OUT_DIR} > /dev/null
 
 touch sorted_result.txt
-hdfs dfs -cat ${OUT_DIR2}/part-00000 > sorted_result.txt
-head -n 10 sorted_result.txt
-rm sorted_result.txt
+hdfs dfs -cat ${OUT_DIR2}/part-00000 | head
+# head -n 10 sorted_result.txt
+# rm sorted_result.txt
 
 hdfs dfs -rm -r -skipTrash ${OUT_DIR2} > /dev/null

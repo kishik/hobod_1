@@ -29,11 +29,11 @@ for line in sys.stdin:
     else:
         if current_word and flag == 1:
             # write result to STDOUT
-            print(f'{current_word} {current_count}') # % (current_word, current_count)
+            print(f'{current_word}\t{current_count}') # % (current_word, current_count)
         current_count = 1
         flag = count
         current_word = word
 
 # do not forget to output the last word if needed!
 if current_word == word and flag == 1:
-    print(f'{current_word} {current_count}')
+    print(f'{current_word}\t{current_count}')
